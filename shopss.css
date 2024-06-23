@@ -1,0 +1,226 @@
+/* Cart container */
+.cart {
+    position: fixed;
+    top: 0;
+    right: -380px; /* Initially hide the cart off-screen */
+    width: 380px;
+    max-height: 100vh; /* Set a maximum height for the cart */
+    padding: 20px;
+    background-color: #ffffff;
+    transition: right .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 1000; /* Ensure the cart is above other elements */
+    overflow-y: auto; /* Add vertical scroll */
+}
+
+/* Cart active state */
+.cart.active {
+    right: 0; /* Move the cart into view when active */
+}
+
+/* Media query for phones */
+@media screen and (max-width: 600px) {
+    .cart {
+        right: -100%; /* Initially hide the cart off-screen */
+        width: 100%;
+        max-height: 100vh; /* Set a maximum height for the cart */
+        overflow-y: auto; /* Add vertical scroll */
+
+    }
+
+    .cart.active {
+        left: 0; /* Move the cart into view when active */
+    }
+}
+
+
+
+/* Cart title */
+.cart-title {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: black;
+}
+
+/* Cart total */
+.total {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1.5rem;
+    border-top: 3px solid rgb(48, 40, 29);
+}
+
+/* Cart total title */
+.total-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+/* Cart total price */
+.total-price {
+    font-size: 1.075rem;
+    margin: 1rem 0 0 0.7rem;
+}
+
+/* Buy button */
+.btn-buy {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem auto 0 auto;
+    padding: 12px 20px;
+    width: 50%;
+    text-align: center;
+    border: none;
+    border-radius: 2rem;
+    background-color: rgb(21, 26, 26);
+    color: #ffffff;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Close cart button */
+#close-cart {
+    position: absolute;
+    top: 1rem;
+    right: 0.8rem;
+    font-size: 2rem;
+    color: rgb(20, 26, 26);
+    cursor: pointer;
+}
+
+/* Cart box */
+.cart-box {
+    display: grid;
+    grid-template-columns: 32% 50% 18%;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Cart image */
+.cart-img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    padding: 10px;
+    object-position: center;
+}
+
+/* Detail box */
+.detail-box {
+    display: grid;
+    row-gap: 0.5rem;
+    outline: black;
+}
+
+/* Product title */
+.product-title {
+    font-size: .700rem;
+    font-weight: 500;
+    text-transform: lowercase;
+}
+
+/* Product price */
+.product-price {
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+/* Trash icon */
+.trash-icon {
+    font-size: 24px;
+    color: rgb(21, 29, 29);
+    cursor: pointer;
+    margin-left: 100%;
+}
+
+/* Cart dropdown */
+.cart-dropdown {
+    display: none;
+    /* Additional styling */
+}
+
+.cart-dropdown.show {
+    display: block;
+}
+
+/* Media query for phones */
+@media screen and (max-width: 600px) {
+    .cart {
+        right: -100%; /* Initially hide the cart off-screen */
+        width: 100%;
+        overflow-y: auto; /* Add vertical scroll */
+    }
+
+    .cart.active {
+        right: 0; /* Move the cart into view when active */
+    }
+}
+/* Default styles */
+.cart-icon {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px; /* Adjust as needed */
+  }
+  
+  .cart-icon i {
+    font-size: 24px; /* Adjust as needed */
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: -8px; /* Adjust as needed */
+    right: -8px; /* Adjust as needed */
+    background-color: red;
+    color: white;
+    font-size: 12px; /* Adjust as needed */
+    padding: 2px 5px;
+    border-radius: 50%;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .cart-icon i {
+      font-size: 25px; /* Adjust as needed for smaller screens */
+      color: light;
+    }
+  
+    .cart-count {
+      top: -6px; /* Adjust as needed for smaller screens */
+      right: -6px; /* Adjust as needed for smaller screens */
+      font-size: 10px; /* Adjust as needed for smaller screens */
+      padding: 1px 3px;
+      background-color: blue;
+    }
+  }
+ 
+  .add-to-cart-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: #ffffff;
+    background-color: #ff9900;
+    border: 2px solid #a88734;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.add-to-cart-button:hover {
+    background-color: #ffbb33;
+    border-color: #a88734;
+}
+
+@media (max-width: 600px) {
+    .add-to-cart-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
